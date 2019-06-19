@@ -8,6 +8,9 @@ $(document).ready(function () {
     var wins = 0;
     var looses = 0;
 
+    $("#looses").text(looses);
+    $("#wins").text(wins);
+
     // * QUESTION: can i create an if statment with on click "if a click the valu is, if not"
 
     //Generate a random number between 19-120 for randomNumber 
@@ -65,22 +68,40 @@ $(document).ready(function () {
 
         newUserValue = parseInt(newUserValue)
         userNumberAdding += newUserValue
+
+        console.log("------")
+        console.log("PiNK GEM" + newUserValue)
+        ifstatement(newUserValue);
     })
 
-    /*$("#purpleGem").click(function () {
+
+    $("#purpleGem").click(function () {
         //We change the user value so it can be add to as a new value with the + of the last interaction
         var newUserValue = addingNumbers(purpleRandomNumber);
         $("#userNumbertxt").text(userNumberAdding);
+
+        newUserValue = parseInt(newUserValue)
+        userNumberAdding += newUserValue
         
-        creatingNewValues(newUserValue);
+        console.log("------")
+        console.log("Purple GEM" + newUserValue)
+        ifstatement(newUserValue);
+    
     })
+
+    //Function for if statement
 
     $("#blueGem").click(function () {
         //We change the user value so it can be add to as a new value with the + of the last interaction
         var newUserValue = addingNumbers(blueRandomNumber);
         $("#userNumbertxt").text(userNumberAdding);
 
-        creatingNewValues(newUserValue);
+        newUserValue = parseInt(newUserValue)
+        userNumberAdding += newUserValue
+
+        console.log("------")
+        console.log("Blue GEM" + newUserValue)
+        ifstatement(newUserValue);
     })
 
     $("#yellowGem").click(function () {
@@ -88,46 +109,47 @@ $(document).ready(function () {
         var newUserValue = addingNumbers(yellowRandomNumber);
         $("#userNumbertxt").text(userNumberAdding);
 
-        creatingNewValues(newUserValue);
-    })*/
+        newUserValue = parseInt(newUserValue)
+        userNumberAdding += newUserValue
 
-   
-console.log(userNumberAdding);
+        console.log("------")
+        console.log("Yellow GEM" + newUserValue)
+        ifstatement(newUserValue);
+    })
 
-    //Create IF statements for wining and losing
-    //If the randomNumber<userNumber (user loses)
-    // we i++ to loses
 
-    if (currentRandomNumber<userNumberAdding){
-        alert("you lose")
-        looses++
+    //Create a function that creates an if stamtent that can give the mis and looses
+    function ifstatement(i) {
+        if (i > currentRandomNumber) {
+            alert("you lose")
+            looses++
+            $("#looses").text(looses)
+
+
+        }
+        else if (currentRandomNumber === i) {
+            alert("you win")
+            wins++
+            $("#wins").text(wins);
+
+        }
     }
-    //else if (randomNumber===userNumber)(user wins)
-    // we i++ to wins
-    else if (currentRandomNumber===userNumberAdding){
-        alert("you win")
-        wins++
-    }
- 
-    $("#wins").text(wins);
-    $("#looses").text(looses);
+
+
+
+
+
+
 
 
     // We refresh the page of random number but not the score
     //if(wins++||looses++){
-        //location.reload();
+    //location.reload();
     //}
-    // * QUESTION: can i create an if statment with on click "if a click the valu is, if not"
+    // * QUESTION: can i create an if statement with on click "if a click the valu is, if not"
+    // Create function that will refresh only that part of the function
 
- 
-
-
-
-    // we can create a script for this part
-
-    // ! we refresh the function of random number but not the score
-    // ! we refresh the function of random number but not the score
-
+   
 
 
 
