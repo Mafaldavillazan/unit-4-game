@@ -130,7 +130,7 @@ $(document).ready(function () {
 
             userNumberAdding = 0
 
-
+            // Create a random number from this
             pinkRandomNumber = createRandomNumber(1, 12)
             purpleRandomNumber = createRandomNumber(1, 12)
             blueRandomNumber = createRandomNumber(1, 12)
@@ -143,30 +143,6 @@ $(document).ready(function () {
 
         }
     }
-
-
-
-
-
-
-
-
-
-
-    // We refresh the page of random number but not the score
-    //if(wins++||looses++){
-    //location.reload();
-    //}
-    // * QUESTION: can i create an if statement with on click "if a click the valu is, if not"
-    // Create function that will refresh only that part of the function
-
-   
-
-
-
-
-
-
 
 
 });
