@@ -11,7 +11,6 @@ $(document).ready(function () {
     $("#looses").text(looses);
     $("#wins").text(wins);
 
-    // * QUESTION: can i create an if statment with on click "if a click the valu is, if not"
 
     //Generate a random number between 19-120 for randomNumber 
     //Create a function that creates random numbers
@@ -125,7 +124,17 @@ $(document).ready(function () {
             looses++
             $("#looses").text(looses)
 
+            // We refresh the page of random number but not the score
+            currentRandomNumber = createRandomNumber(19, 120);
+            $("#randomNumbertxt").text(currentRandomNumber);
 
+            userNumberAdding = 0
+
+
+            pinkRandomNumber = createRandomNumber(1, 12)
+            purpleRandomNumber = createRandomNumber(1, 12)
+            blueRandomNumber = createRandomNumber(1, 12)
+            yellowRandomNumber = createRandomNumber(1, 12)
         }
         else if (currentRandomNumber === i) {
             alert("you win")
@@ -134,6 +143,8 @@ $(document).ready(function () {
 
         }
     }
+
+
 
 
 
