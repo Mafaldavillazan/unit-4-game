@@ -2,10 +2,7 @@
 $(document).ready(function () {
 
     //Variable that shows the number the user will have and will need to add to = the random number
-    var userNumberStart = 1
-    var userNumberAdding = 1
-    //add this value to the HTML
-    $("#userNumbertxt").text(userNumberStart);
+    var userNumberAdding = 0
 
     //QUESTION: can i create an if statment with on click "if a click the valu is, if not"
 
@@ -47,8 +44,7 @@ $(document).ready(function () {
     console.log("-----");
     console.log("Yellow value "+ yellowRandomNumber);
 
-    // Create .click functions for each gem
-    // When you click on it you activate a function addingNumber(pinkRandomNumber){}
+    
     //takes the value of that random number and add it on to the userNumber
     //that value to userNumber + numberToAdd
     function addingNumbers(gemValue){
@@ -56,32 +52,38 @@ $(document).ready(function () {
         return newValue;        
     }
 
+    // Create .click functions for each gem
+    // When you click on it you activate a function addingNumber(pinkRandomNumber){}
     $("#pinkGem").click(function () {
         //We change the user value so it can be add to as a new value with the + of the last interaction
         userNumberAdding = addingNumbers(pinkRandomNumber);
+        $("#userNumbertxt").text(userNumberAdding);
         console.log("-----");
         console.log("New Value  1 + " + pinkRandomNumber + "=" + userNumberAdding);
     })
     $("#purpleGem").click(function () {
         //We change the user value so it can be add to as a new value with the + of the last interaction
         userNumberAdding = addingNumbers(purpleRandomNumber);
+        $("#userNumbertxt").text(userNumberAdding);
         console.log("-----");
         console.log("New Value  1 + " + purpleRandomNumber + "=" + userNumberAdding);
     })
     $("#blueGem").click(function () {
         //We change the user value so it can be add to as a new value with the + of the last interaction
         userNumberAdding = addingNumbers(blueRandomNumber);
+        $("#userNumbertxt").text(userNumberAdding);
         console.log("-----");
         console.log("New Value  1 + " + blueRandomNumber + "=" + userNumberAdding);
     })
     $("#yellowGem").click(function () {
         //We change the user value so it can be add to as a new value with the + of the last interaction
         userNumberAdding = addingNumbers(yellowRandomNumber);
+        $("#userNumbertxt").text(userNumberAdding);
         console.log("-----");
         console.log("New Value  1 + " + yellowRandomNumber + "=" + userNumberAdding);
     })
 
-    $("#userNumbertxt").text(userNumberAdding);
+    
 
 
 
