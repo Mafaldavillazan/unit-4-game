@@ -4,8 +4,11 @@ $(document).ready(function () {
     //Variable that shows the number the user will have and will need to add to = the random number
     var userNumberAdding = 0
 
-    //QUESTION: can i create an if statment with on click "if a click the valu is, if not"
+    //variables for winings and looses
+    var wins = 0;
+    var looses = 0;
 
+    // * QUESTION: can i create an if statment with on click "if a click the valu is, if not"
 
     //Generate a random number between 19-120 for randomNumber 
     //Create a function that creates random numbers
@@ -30,60 +33,102 @@ $(document).ready(function () {
     //Print this result on HTML
     $("#randomNumbertxt").text(currentRandomNumber);
 
+    // * QUESTION: can i create an I make the three variables in just one line
+
     //Generate a random number between for 1-12 for each Gem
     var pinkRandomNumber = createRandomNumber(1, 12)
-    console.log("-----");
-    console.log("Pink Value "+ pinkRandomNumber);
     var purpleRandomNumber = createRandomNumber(1, 12)
-    console.log("-----");
-    console.log("Purple Value "+ purpleRandomNumber);
     var blueRandomNumber = createRandomNumber(1, 12)
-    console.log("-----");
-    console.log("Blue Value "+ blueRandomNumber);
     var yellowRandomNumber = createRandomNumber(1, 12)
-    console.log("-----");
-    console.log("Yellow value "+ yellowRandomNumber);
 
-    
+
+
     //takes the value of that random number and add it on to the userNumber
     //that value to userNumber + numberToAdd
-    function addingNumbers(gemValue){
+    function addingNumbers(gemValue) {
         newValue = userNumberAdding + gemValue
-        return newValue;        
+        return newValue;
     }
+
+    //We create a function that transform the user values into numbers so we can use them in If statments
+    /*function creatingNewValues(){
+        newUserValue = parseInt(newUserValue)
+        userNumberAdding += newUserValue
+    }*/
 
     // Create .click functions for each gem
     // When you click on it you activate a function addingNumber(pinkRandomNumber){}
     $("#pinkGem").click(function () {
         //We change the user value so it can be add to as a new value with the + of the last interaction
-        userNumberAdding = addingNumbers(pinkRandomNumber);
-        $("#userNumbertxt").text(userNumberAdding);
-        console.log("-----");
-        console.log("New Value  1 + " + pinkRandomNumber + "=" + userNumberAdding);
-    })
-    $("#purpleGem").click(function () {
-        //We change the user value so it can be add to as a new value with the + of the last interaction
-        userNumberAdding = addingNumbers(purpleRandomNumber);
-        $("#userNumbertxt").text(userNumberAdding);
-        console.log("-----");
-        console.log("New Value  1 + " + purpleRandomNumber + "=" + userNumberAdding);
-    })
-    $("#blueGem").click(function () {
-        //We change the user value so it can be add to as a new value with the + of the last interaction
-        userNumberAdding = addingNumbers(blueRandomNumber);
-        $("#userNumbertxt").text(userNumberAdding);
-        console.log("-----");
-        console.log("New Value  1 + " + blueRandomNumber + "=" + userNumberAdding);
-    })
-    $("#yellowGem").click(function () {
-        //We change the user value so it can be add to as a new value with the + of the last interaction
-        userNumberAdding = addingNumbers(yellowRandomNumber);
-        $("#userNumbertxt").text(userNumberAdding);
-        console.log("-----");
-        console.log("New Value  1 + " + yellowRandomNumber + "=" + userNumberAdding);
+        var newUserValue = addingNumbers(pinkRandomNumber);
+        $("#userNumbertxt").text(newUserValue);
+
+        newUserValue = parseInt(newUserValue)
+        userNumberAdding += newUserValue
     })
 
-    
+    /*$("#purpleGem").click(function () {
+        //We change the user value so it can be add to as a new value with the + of the last interaction
+        var newUserValue = addingNumbers(purpleRandomNumber);
+        $("#userNumbertxt").text(userNumberAdding);
+        
+        creatingNewValues(newUserValue);
+    })
+
+    $("#blueGem").click(function () {
+        //We change the user value so it can be add to as a new value with the + of the last interaction
+        var newUserValue = addingNumbers(blueRandomNumber);
+        $("#userNumbertxt").text(userNumberAdding);
+
+        creatingNewValues(newUserValue);
+    })
+
+    $("#yellowGem").click(function () {
+        //We change the user value so it can be add to as a new value with the + of the last interaction
+        var newUserValue = addingNumbers(yellowRandomNumber);
+        $("#userNumbertxt").text(userNumberAdding);
+
+        creatingNewValues(newUserValue);
+    })*/
+
+   
+console.log(userNumberAdding);
+
+    //Create IF statements for wining and losing
+    //If the randomNumber<userNumber (user loses)
+    // we i++ to loses
+
+    if (currentRandomNumber<userNumberAdding){
+        alert("you lose")
+        looses++
+    }
+    //else if (randomNumber===userNumber)(user wins)
+    // we i++ to wins
+    else if (currentRandomNumber===userNumberAdding){
+        alert("you win")
+        wins++
+    }
+ 
+    $("#wins").text(wins);
+    $("#looses").text(looses);
+
+
+    // We refresh the page of random number but not the score
+    //if(wins++||looses++){
+        //location.reload();
+    //}
+    // * QUESTION: can i create an if statment with on click "if a click the valu is, if not"
+
+ 
+
+
+
+    // we can create a script for this part
+
+    // ! we refresh the function of random number but not the score
+    // ! we refresh the function of random number but not the score
+
+
 
 
 
