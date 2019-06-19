@@ -15,23 +15,34 @@ $(document).ready(function () {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    //Create function that give us random number that the user will need to reach
-    function createRandomNumber() {
+    //Create function that give us random number between two numbers
+    function createRandomNumber(x,y) {
         var randomNumber = "";
-        for (var i = 0; i < 120; i++) {
-            randomNumber = getRandomNumber(19, 120);
+        for (var i = 0; i < y; i++) {
+            randomNumber = getRandomNumber(x,y);
         }
         return randomNumber;
     }
 
     //Refresh this whenever the page starts o the user has won or lose
+    var currentRandomNumber = createRandomNumber(19,20)
     //Print this result on HTML
-    var currentRandomNumber = createRandomNumber()
     $("#randomNumbertxt").text(currentRandomNumber);
 
+    //Generate a random number between for 1-12 randomNumberGem createRandomNumberGem
+    var pinkRandomNumber = createRandomNumber(1,12)
+    var purpleRandomNumber = createRandomNumber(1,12)
+    var blueRandomNumber = createRandomNumber(1,12)
+    var yellowRandomNumber = createRandomNumber(1,12)
+    //Assigns that value to 
+    //we run randomNumberGem to all this variables
+    //pinkRandomNumber 
+    //purpleRandomNumber
+    //blueRandomNumber
+    //yellowRandomNumber
 
-    //This result has to be printed on HTML
-    //Result has to be stored as the randomNumber
+
+
 
 
 });
