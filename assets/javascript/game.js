@@ -14,24 +14,25 @@ $(document).ready(function () {
     $("#wins").text(wins);
 
     //Create a function that creates random numbers
+
+    //Generate a random number between 19-120 for randomNumber
+
+    function getRandomNumber(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    //Create function that give us random number between two numbers
+    function createRandomNumber(min, max) {
+        var randomNumber = "";
+        for (var i = 0; i < max; i++) {
+            randomNumber = getRandomNumber(min, max);
+        }
+        return randomNumber;
+    }
+
     if (looses++ || wins++ || looses || wins) {
-        //Generate a random number between 19-120 for randomNumber
-
-        function getRandomNumber(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-
-        //Create function that give us random number between two numbers
-        function createRandomNumber(min, max) {
-            var randomNumber = "";
-            for (var i = 0; i < max; i++) {
-                randomNumber = getRandomNumber(min, max);
-            }
-            return randomNumber;
-        }
-
         //Create a random number between 19-20 for the user to try to reach it
         //TO.DO: Refresh this whenever the page starts or the user has won or lose
         var currentRandomNumber = createRandomNumber(19, 120);
@@ -125,15 +126,23 @@ $(document).ready(function () {
         if (i > currentRandomNumber) {
             looses++
             $("#looses").text(looses)
+            
+            //Refresh and add the values to HTML so they game starts again
             userNumberAdding = 0
             $("#userNumbertxt").text(userNumberAdding);
+            currentRandomNumber = createRandomNumber(19, 120);
+            $("#randomNumbertxt").text(currentRandomNumber);
 
         }
         else if (currentRandomNumber === i) {
             wins++
             $("#wins").text(wins);
+            
+            //Refresh and add the values to HTML so they game starts again
             userNumberAdding = 0
             $("#userNumbertxt").text(userNumberAdding);
+            currentRandomNumber = createRandomNumber(19, 120);
+            $("#randomNumbertxt").text(currentRandomNumber);
         }
     }
 
