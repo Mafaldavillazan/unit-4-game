@@ -64,14 +64,16 @@ $(document).ready(function () {
         // When you click on it you activate a function addingNumber(pinkRandomNumber){}
         $("#pinkGem").click(function () {
             //We change the user value so it can be add to as a new value with the + of the last interaction
-            var newUserValue = addingNumbers(pinkRandomNumber);
+            newUserValue = addingNumbers(pinkRandomNumber);
             $("#userNumbertxt").text(newUserValue);
 
             newUserValue = parseInt(newUserValue)
-            userNumberAdding += newUserValue
+            userNumberAdding = newUserValue
 
+            
             console.log("------")
             console.log("PiNK GEM" + newUserValue)
+
             ifstatement(newUserValue);
         })
 
@@ -82,7 +84,7 @@ $(document).ready(function () {
             $("#userNumbertxt").text(userNumberAdding);
 
             newUserValue = parseInt(newUserValue)
-            userNumberAdding += newUserValue
+            userNumberAdding = newUserValue
 
             console.log("------")
             console.log("Purple GEM" + newUserValue)
@@ -97,7 +99,7 @@ $(document).ready(function () {
             $("#userNumbertxt").text(userNumberAdding);
 
             newUserValue = parseInt(newUserValue)
-            userNumberAdding += newUserValue
+            userNumberAdding = newUserValue
 
             console.log("------")
             console.log("Blue GEM" + newUserValue)
@@ -110,7 +112,7 @@ $(document).ready(function () {
             $("#userNumbertxt").text(userNumberAdding);
 
             newUserValue = parseInt(newUserValue)
-            userNumberAdding += newUserValue
+            userNumberAdding = newUserValue
 
             console.log("------")
             console.log("Yellow GEM" + newUserValue)
